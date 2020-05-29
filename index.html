@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ body
+{
+  margin: 0;
+  padding: 0;
+  background:#F4D03F;
+
+}
+
+#menuToggle
+{
+  display:block;
+  position:fixed;
+  z-index:40;
+  top:20px;
+  left:20px;
+  -webkit-user-select: none;
+  user-select: none;
+
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color:black ;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color:#F4D03F ;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position:absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; 
+  z-index: 2; 
+  
+  -webkit-touch-callout: none;
+}
+
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background:black;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+ transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+             background :0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+              opacity :0.55s ease; 
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background:#F4D03F;
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu
+{
+  position: absolute;
+  width:1700px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+  opacity:0.7;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+#home
+{
+   color:white;
+   padding-top:5em;
+   text-align:center;
+
+}
+
+
+#home h1 {
+  color:black;
+  font-family: monospace;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size:3.5em;
+  margin: 0 auto; 
+  font-weight:900;
+  letter-spacing: .15em;
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+/* 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}  */
+#about
+{
+    padding-top:500px;
+}
+#about p
+       {
+          color:black;
+          text-align: center;
+          font-size:20px;
+          padding:40px;
+       }
+#about h2{
+    color:black;
+    text-align: center;
+    font-size:60px;
+    font-family:monospace;
+}
+#works h1{
+    color:black;
+    text-align: center;
+    padding-top:500px;
+    font-family: monospace;
+
+}
+.row {
+  margin: 8px -16px;
+}
+
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  background-color:black;
+  padding: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+.test
+       {
+           font-size:30px;
+           bottom:0;
+           right:0;
+           left:60;
+           padding:20px;
+           position:fixed;
+       }
+      #pricing div
+        {
+            display:flex;
+            justify-content: center;
+            flex-wrap:wrap;
+            overflow-x:auto;
+        }
+        .basic
+        {
+            margin:20px;
+            border:5px solid #fff;
+            height:450px;
+            width:260px;
+            justify-content:center;
+            font-family:sans-serif;
+            border-radius:10px;
+            background-color:#fff;
+            /* box-shadow: 0 4px 8px 0, 0 6px 20px 0 rgba(200,200,200); */
+            box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+                        15px  15px 15px rgba(0,0,0,0.1),
+                        inset -5px -5px 5px rgba(255,255,255,0.2),
+                        inset 5px 5px 5px rgba(0,0,0,0.1);
+        }
+        .pro
+        {
+            margin:20px;
+            border:5px solid #fff;
+            height:450px;
+            width:260px;
+            justify-content:center;
+            font-family:sans-serif;
+            border-radius:10px;
+            overflow-y: hidden;
+            background-color:#fff;
+            /* box-shadow: 0 4px 8px 0, 0 6px 20px 0 rgba(200,200,200); */
+            box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+                        15px  15px 15px rgba(0,0,0,0.1),
+                        inset -5px -5px 5px rgba(255,255,255,0.2),
+                        inset 5px 5px 5px rgba(0,0,0,0.1);
+        } 
+        .premi
+        {
+            margin:20px;
+            border:5px solid #fff;
+            height:450px;
+            width:260px;
+            justify-content:center;
+            font-family:sans-serif;
+            border-radius:10px;
+            background-color:#fff;
+            text-align: center;
+            overflow-y: hidden;
+            /* box-shadow: 0 4px 8px 0, 0 6px 20px 0 rgba(200,200,200); */
+            box-shadow: -15px -15px 15px rgba(255,255,255,0.2),
+                        15px  15px 15px rgba(0,0,0,0.1),
+                        inset -5px -5px 5px rgba(255,255,255,0.2),
+                        inset 5px 5px 5px rgba(0,0,0,0.1);
+            
+        }
+       #pricing h1{
+            background-color:#F4D03F;
+            color:black;
+            font-size:2em;
+            font-family: monospace;
+            text-align: center;
+            height:50px;
+            width:200px;
+           
+        }
+        #pricing h2{
+            font-size:60px;
+            font-family:monospace;
+            text-align: center;
+            color:black;
+           
+        }
+  .price {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.price li {
+  padding:10px;
+  text-align: center;
+  font-size:1em;
+  font-weight: 700;
+  color:black;
+}
+.inr
+{
+    font-size:40px;
+   padding-bottom:10px;
+}
+#pricing
+{
+  padding-top:500px;
+}
+#contact h2{
+    color:black;
+    text-align: center;
+    font-size:60px;
+    font-family: monospace;
+}
+
+#contact h3{
+  text-align: center;
+  font-size:1.9em;
+  color:black;
+  font-family: monospace;
+}
+#contact p{
+  text-align: center;
+  font-size:1.2em;
+  color:black;
+  font-family: monospace;
+}
+.container {
+  position: relative;
+  width: 100%;
+  z-index:-1;
+ overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height:100%;
+  border:10px solid #F4D03F;
+ 
+}
+#works h2{
+    color:black;
+    text-align: center;
+    font-size:60px;
+    font-family:monospace;
+}
+#works h3{
+  color:black;
+    text-align: center;
+    font-size:25px;
+    font-family:monospace;
+
+}
+.icon
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#contact
+{
+  padding-top:300px;
+  padding-bottom:100px;
+}
+.copyright
+{
+  
+  width:100%;
+  height:70px;
+  background-color: black;
+  text-align: center;
+}
+.copyright h1{
+  font-size:20px;
+  color:#F4D03F;
+}
+.copyright h2{
+  font-size:20px;
+  color:#F4D03F;
+}
+</style>
+</head>
+<body>
+<nav role="navigation">
+    <div id="menuToggle">
+
+       <input type="checkbox" /> 
+      
+      <span></span>
+      <span></span>
+      <span></span>
+      
+   
+      <ul id="menu">
+        <a href="#home"style="text-decoration:none"><li>HOME</li></a>
+        <a href="#about"style="text-decoration:none"><li>ABOUT</li></a>
+        <a href="#works"style="text-decoration:none"><li>OUR WORKS</li></a>
+        <a href="#pricing"style="text-decoration:none"><li>PRICE</li></a>
+        <a href="#contact"style="text-decoration:none"><li>CONTACT</li></a>
+    
+      </ul>
+    </div>
+  </nav>
+ <div id="home">
+ <h1>CAPTURR.IN</h1>
+</div>
+<div class="test"><a href="https://api.whatsapp.com/send?phone=+916371309009" ><img src="https://img.icons8.com/office/50/000000/whatsapp.png"></a></div>
+
+  <div id="about">
+  <h2>ABOUT US</h2>
+  
+          <p>We specialize in wedding photography,Prewedding,corporate.
+             We capture the perfect memorable moment in the perfect place.
+             We will be with you every step of the way to guarantee your special moments are captured for all time.
+             We are incredibly blessed to have a team of creative photographers who work with us.
+             We would love to visit with you by phone or whatsapp or in person and talk about your wedding,
+             event, portrait session or video project.
+    
+          </p>
+ 
+  </div>
+  <div id="works">
+    <h2>OUR WORKS</h2>
+    <div class="container"> 
+    
+      <img class="image"src="https://i.postimg.cc/26VTMYn7/IMG-20200218-WA0011.jpg">
+    </div>
+    <div class="container"> 
+
+      <img class="image"src="https://i.postimg.cc/C1nJP9hF/IMG-20200518-WA0031.jpg">
+    </div>
+    <div class="container"> 
+    
+      <img class="image" src="https://i.postimg.cc/hvFsHMvV/IMG-20200518-WA0036.jpg">
+    </div>
+    <div class="container"> 
+    
+      <img class="image" src="https://i.postimg.cc/cCN7DHkm/IMG-20200518-WA0016.jpg">
+    </div>
+    <div class="container"> 
+    
+      <img class="image" src="https://i.postimg.cc/nc2Kkn44/IMG-20200518-WA0027.jpg">
+    </div>
+    <div class="container"> 
+     <img class="image" src="https://i.postimg.cc/SNHSHMfk/IMG-20200518-WA0024.jpg">
+    </div>
+    <div class="container"> 
+      <img class="image" src="https://i.postimg.cc/c4xqkgrR/IMG-20200218-WA0009.jpg">
+     </div>
+     <div class="container"> 
+      <img class="image" src="https://i.postimg.cc/hjJLxC2t/IMG-20200218-WA0025.jpg">
+     </div>
+     <div class="container"> 
+      <img class="image"src="https://i.postimg.cc/28w3TQbd/IMG-20200218-WA0026.jpg">
+     </div>
+     <div class="container"> 
+      <img class="image" src="https://i.postimg.cc/gkQpTcRN/IMG-20200218-WA0013.jpg">
+     </div>
+     <div class="container"> 
+      <img class="image" src="https://i.postimg.cc/vZK4XdHs/IMG-20200218-WA0012.jpg">
+     </div>
+    <h3>check our instagram  for more creative works</h3>
+    <a href="https://instagram.com/capturr.in?igshid=lwmih8txdcrg"><img class="icon"src="https://img.icons8.com/office/80/000000/instagram-new.png"/></a>
+    </div>
+<div id="pricing">
+  <h2>PRICING</h2>
+  <div>
+      <div class="basic">
+         <h1>BASIC</h1>
+         <ul class="price">
+          <li>Wedding/Event photogrphy</li>
+          <li>Videography</li>
+          <li>1-2 Days</li>
+          <div class="inr"><li>15k-40k</li></div>
+          </ul>
+      </div>
+      <div class="pro">
+          <h1>PRO</h1>
+          <ul class="price">
+              <li> wedding/Event photography</li>
+              <li>videography</li>
+              <li>Both HD,Ultra 4k</li>
+              <li>Fullfilm Album</li>
+              <li>Drone shoot</li>
+              <li>1-2 Days</li>
+             <div class="inr"><li>40k-90k</li></div>
+              </ul>
+      </div>
+      <div class="premi">
+      <h1>PREMIUM</h1>
+      <ul class="price">
+      <li>Wedding/Event photography</li>
+      <li>DSLR Videography</li>
+      <li>Fullfilm Album</li>
+      <li>Both HD,Ultra 4K</li>
+      <li>DSLR Drone shoot</li>
+      <li>PreWedding photoshoot</li>        
+      <div class="inr"><li>1-2 LAKH</li></div>
+      </ul>
+      </div>
+  </div>
+</div>
+    <div id="contact">
+        <h2>CONTACT</h2>
+        <h3>CALL</h3>
+        <P><a href="tel:+91 6371309009"><img src="https://image.flaticon.com/icons/svg/724/724664.svg" style="height:60px "></a></P>
+        <h3>VISIT</h3>
+          <p>Near Sum hospital,Bhubaneswar,Odisha </p>
+          <h3>GMAIL</h3>
+          <p class="mail"><a href="mailto:capturr.in003@gmail.com?subject=Hello%20Capturr"target="_top"style="text-decoration:none"><img src="https://img.icons8.com/plasticine/100/000000/gmail.png"/></a></p>
+    </div>
+    <div class="copyright"><h1>Amlanjyoti sahoo</h1>
+    <h2>copyright 2020|All right reserved</h2></div>
+  </body>
+  </html>
